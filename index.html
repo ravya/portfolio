@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preeti Mudgal - Engineering Manager & Backend Architect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+        
+        .hero .tagline {
+            font-size: 1.1em;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+        
+        .hero .cta {
+            display: inline-flex;
+            gap: 20px;
+            animation: fadeInUp 0.8s ease-out 0.6s backwards;
+        }
+        
+        .hero .cta a {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+        
+        .hero .cta .primary {
+            background: white;
+            color: #667eea;
+        }
+        
+        .hero .cta .primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .hero .cta .secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .hero .cta .secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 20px;
+        }
+        
+        .section h2 {
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #2d3748;
+        }
+        
+        .stats {
+            background: white;
+            padding: 60px 20px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            color: #666;
+        }
+        
+        .case-studies {
+            background: #f8f9fa;
+        }
+        
+        .case-study {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .case-study:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .case-study h3 {
+            font-size: 2em;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .case-study .company {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .case-study .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: #eef2ff;
+            color: #667eea;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .case-study-content {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .case-study-section {
+            margin-bottom: 30px;
+        }
+        
+        .case-study-section h4 {
+            color: #2d3748;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .case-study-section h4::before {
+            content: "→";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .case-study-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .case-study-section li {
+            padding-left: 25px;
+            position: relative;
+            margin-bottom: 12px;
+        }
+        
+        .case-study-section li::before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .impact-metrics {
+            background: linear-gradient(135deg, #f6f8fb 0%, #eef2ff 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .impact-metrics h4 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .impact-item {
+            text-align: center;
+        }
+        
+        .impact-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .impact-description {
+            font-size: 0.95em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .tech-stack {
+            background: white;
+            padding: 60px 20px;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .tech-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .tech-item-name {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .contact h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            border-bottom-color: white;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .case-study {
+                padding: 30px 20px;
+            }
+            
+            .case-study h3 {
+                font-size: 1.5em;
+            }
+            
+            .hero .cta {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .hero .cta a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Preeti Mudgal</h1>
+        <div class="subtitle">Engineering Manager & Senior Backend Architect</div>
+        <div class="tagline">
+            Building scalable distributed systems at massive scale • 7 years at Zomato (unicorn, $8B+ market cap) • Led critical acquisitions & migrations serving 300M+ users
+        </div>
+        <div class="cta">
+            <a href="#contact" class="primary">Get In Touch</a>
+            <a href="#case-studies" class="secondary">View Case Studies</a>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">300M+</div>
+                <div class="stat-label">Users Served</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7 Years</div>
+                <div class="stat-label">At Market Leader</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2</div>
+                <div class="stat-label">Major Acquisitions</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Engineers Led</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$18K/mo</div>
+                <div class="stat-label">Cost Savings</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section case-studies" id="case-studies">
+        <div class="container">
+            <h2>Case Studies</h2>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h3>Blinkit Multi-Tenant Architecture</h3>
+                        <div class="company">Zomato • 2023-2024</div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Go</span>
+                        <span class="tag">Microservices</span>
+                        <span class="tag">Multi-Tenancy</span>
+                        <span class="tag">AWS</span>
+                    </div>
+                </div>
+                
+                <div class="case-study-content">
+                    <div class="case-study-section">
+                        <h4>Challenge</h4>
+                        <p>When Zomato acquired Blinkit (formerly Grofers) for $570M, we needed to integrate two separate food delivery platforms while maintaining distinct brand identities and enabling future acquisitions. The existing infrastructure wasn't designed for multi-tenancy, and any downtime would impact millions of daily orders.</p>
+                    </div>
+
+                    <div class="case-study-section">
+                        <h4>Solution & Leadership</h4>
+                        <p>I led the engineering team that architected and implemented Zomato's first multi-tenant infrastructure. This was a company-wide initiative, and my team pioneered the approach that later became the standard for all integrations.</p>
+                        <ul>
+                            <li>Designed tenant isolation at the service layer, enabling separate business rules, pricing, and promotions per brand</li>
+                            <li>Architected database partitioning strategy using tenant-aware routing with DynamoDB and MySQL</li>
+                            <li>Implemented feature flags and configuration management for tenant-specific behavior</li>
+                            <li>Built comprehensive testing framework to validate cross-tenant isolation</li>
+                            <li>Led migration of Cart and Order Management services with zero downtime</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-study-section">
+                        <h4>Technical Deep Dive</h4>
+                        <ul>
+                            <li>Introduced tenant context propagation through the entire request lifecycle using Go middleware</li>
+                            <li>Implemented tenant-aware Kafka topics and SQS queues for event-driven architecture</li>
+                            <li>Created abstraction layers for tenant-specific business logic without code duplication</li>
+                            <li>Designed rollback mechanisms and circuit breakers for safe tenant onboarding</li>
+                            <li>Built monitoring and alerting per tenant to identify issues in isolation</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-metrics">
+                        <h4>Business Impact</h4>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <div class="impact-value">Zero</div>
+                                <div class="impact-description">Downtime during migration</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">2 Brands</div>
+                                <div class="impact-description">Successfully integrated</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">30%</div>
+                                <div class="impact-description">Faster future integrations</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">Millions</div>
+                                <div class="impact-description">Daily orders processed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h3>Uber Eats India Acquisition & Migration</h3>
+                        <div class="company">Zomato • 2020</div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Data Migration</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">ETL</span>
+                        <span class="tag">Zero Data Loss</span>
+                    </div>
+                </div>
+                
+                <div class="case-study-content">
+                    <div class="case-study-section">
+                        <h4>Challenge</h4>
+                        <p>Zomato acquired Uber Eats India business, requiring migration of millions of users, restaurants, and historical order data into Zomato's ecosystem. The challenge was migrating massive data volumes across different schemas and business logic while maintaining data integrity and enabling seamless user experience on day one.</p>
+                    </div>
+
+                    <div class="case-study-section">
+                        <h4>My Role & Approach</h4>
+                        <ul>
+                            <li>Key engineering role in the migration team, responsible for order history and user preference migration</li>
+                            <li>Designed and implemented ETL pipelines to transform and load millions of records</li>
+                            <li>Built validation frameworks to ensure data integrity across the migration</li>
+                            <li>Created automated reconciliation scripts to verify migration accuracy</li>
+                            <li>Developed rollback and retry mechanisms for failed migration batches</li>
+                            <li>Coordinated with cross-functional teams (product, data, infrastructure) for seamless cutover</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-study-section">
+                        <h4>Technical Implementation</h4>
+                        <ul>
+                            <li>Built Python-based ETL pipelines with parallel processing for faster migration</li>
+                            <li>Implemented idempotent data loading to handle retries without duplicates</li>
+                            <li>Created comprehensive data validation suite checking referential integrity</li>
+                            <li>Designed phased migration approach: user data → restaurant data → order history</li>
+                            <li>Set up monitoring dashboards tracking migration progress and error rates in real-time</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-metrics">
+                        <h4>Business Impact</h4>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <div class="impact-value">Millions</div>
+                                <div class="impact-description">Users migrated</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">Zero</div>
+                                <div class="impact-description">Data loss</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">100%</div>
+                                <div class="impact-description">Data accuracy</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">Seamless</div>
+                                <div class="impact-description">User experience on day 1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h3>Monolith to Microservices Migration</h3>
+                        <div class="company">Zomato • 2019-2020</div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Architecture</span>
+                        <span class="tag">Go</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Zero Downtime</span>
+                    </div>
+                </div>
+                
+                <div class="case-study-content">
+                    <div class="case-study-section">
+                        <h4>Challenge</h4>
+                        <p>Zomato's order placement flow was tightly coupled in a PHP monolith, causing deployment bottlenecks, making scaling difficult, and slowing down development velocity. With millions of orders processed daily, any migration had to be done with zero downtime and no impact to conversion rates.</p>
+                    </div>
+
+                    <div class="case-study-section">
+                        <h4>Solution & Execution</h4>
+                        <ul>
+                            <li>Spearheaded the migration strategy from monolithic PHP application to Go-based microservices</li>
+                            <li>Designed service boundaries around business capabilities: Cart Service, Promo Service, Order Service, Payment Service</li>
+                            <li>Implemented strangler fig pattern for gradual migration without big-bang rewrites</li>
+                            <li>Built feature flags to route traffic between old and new systems for safe rollout</li>
+                            <li>Created comprehensive test suites and shadow traffic testing for validation</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-study-section">
+                        <h4>Technical Architecture</h4>
+                        <ul>
+                            <li>Introduced async communication patterns using Kafka for event-driven architecture</li>
+                            <li>Implemented API gateway pattern for routing and authentication</li>
+                            <li>Designed distributed tracing using correlation IDs for debugging across services</li>
+                            <li>Built centralized configuration management and service discovery</li>
+                            <li>Created CI/CD pipelines for independent service deployments</li>
+                            <li>Implemented circuit breakers and retry mechanisms for resilience</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-metrics">
+                        <h4>Business Impact</h4>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <div class="impact-value">50-60%</div>
+                                <div class="impact-description">Latency reduction</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">2 seconds</div>
+                                <div class="impact-description">Faster order placement</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">Zero</div>
+                                <div class="impact-description">Downtime during migration</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">3x</div>
+                                <div class="impact-description">Faster feature deployment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-study-header">
+                    <div>
+                        <h3>Independent Product: GetExamPix</h3>
+                        <div class="company">Independent • 2025</div>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Full-Stack</span>
+                        <span class="tag">Product Design</span>
+                        <span class="tag">Go</span>
+                        <span class="tag">SaaS</span>
+                    </div>
+                </div>
+                
+                <div class="case-study-content">
+                    <div class="case-study-section">
+                        <h4>Problem & Opportunity</h4>
+                        <p>Students applying for Indian government exams (UPSC, SSC, Banking) face strict image requirements (size, dimensions, file size) that often lead to application rejections. Existing tools were either too complex, required technical knowledge, or didn't maintain image quality.</p>
+                    </div>
+
+                    <div class="case-study-section">
+                        <h4>Solution</h4>
+                        <ul>
+                            <li>Built end-to-end web application for intelligent image resizing and compression</li>
+                            <li>Implemented smart cropping algorithms that preserve face position and quality</li>
+                            <li>Created preset configurations for all major government exam requirements</li>
+                            <li>Designed simple, intuitive UI requiring no technical knowledge</li>
+                            <li>Deployed production-ready system with CDN integration for fast global access</li>
+                        </ul>
+                    </div>
+
+                    <div class="case-study-section">
+                        <h4>Technical Stack</h4>
+                        <ul>
+                            <li>Backend: Go with image processing libraries for high-performance compression</li>
+                            <li>Frontend: Vanilla JavaScript for lightweight, fast user experience</li>
+                            <li>Infrastructure: AWS S3, CloudFront CDN, EC2 for hosting</li>
+                            <li>All processing done client-side for privacy (no images stored on servers)</li>
+                        </ul>
+                    </div>
+
+                    <div class="impact-metrics">
+                        <h4>Impact</h4>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <div class="impact-value">Live</div>
+                                <div class="impact-description">Production system</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">Full-Stack</div>
+                                <div class="impact-description">Design to deployment</div>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-value">100%</div>
+                                <div class="impact-description">Quality preservation</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px; text-align: center;">
+                        <a href="https://getexampix.com" target="_blank" style="color: #667eea; font-weight: 600; text-decoration: none; border-bottom: 2px solid #667eea;">View Live Product →</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tech-stack">
+        <div class="container">
+            <h2>Technical Expertise</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="tech-item-name">Go (Golang)</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Python</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Microservices</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">AWS</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">MySQL</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">DynamoDB</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Redis</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Kafka</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Docker</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">ElasticSearch</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">System Design</div>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-name">Engineering Leadership</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <p style="font-size: 1.2em; max-width: 600px; margin: 0 auto;">
+                Available for remote engineering leadership roles and high-impact technical projects worldwide.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:preetimudgal06@gmail.com">preetimudgal06@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:+918130323155">+91-8130323155</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
